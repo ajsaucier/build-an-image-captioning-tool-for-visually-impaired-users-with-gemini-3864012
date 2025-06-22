@@ -31,7 +31,7 @@
                     <img id="imagePreview" src="https://placehold.co/500x300/orange/white" alt="Image preview" class="img-fluid">
                 </div>
                 
-                <form id="imageUploadForm">
+                <form id="imageUploadForm" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="imageInput">Upload Image</label>
                         <input type="file" class="form-control-file" id="imageInput" accept="image/*">
@@ -42,8 +42,8 @@
             </div>
             <!-- Right Column for Caption Display -->
             <div class="col-md-6">
-                <div id="captionContainer" class="border p-3" style="height: 200px;">
-                    <p id="imageCaption">Caption will be displayed here.</p>
+                <div id="captionContainer" class="border p-3" style="height: auto">
+                    <p role="status" id="imageCaption">Caption will be displayed here.</p>
                     
                 </div>
                 <div class="mt-1">
