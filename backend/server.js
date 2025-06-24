@@ -17,6 +17,7 @@ app.use(cors());
 //Configure Gemini API
 const googleGenAI = new GoogleGenerativeAI(process.env.API_KEY);
 
+//Create new instance of Gemini API model
 const geminiProVisionModel = googleGenAI.getGenerativeModel({
     model: "gemini-2.5-flash"
 })
@@ -100,7 +101,8 @@ app.post("/generate-caption", upload.single("file"), async (req, res) => {
         };
 
         const images = [imagePath];
-        const prompt = "Write an appropriate caption for this image to help visually-impared users";
+        const prompt = "Write an appropriate caption for this image to help visually-impaired users. Include all embedded text.";
+        // const prompt = "Write a description of what is happening in this comic book page. Include details about how each panel flows into the next and include all text in speech bubbles.";
 
         const request = await geminiProVisionModel.generateContent([
             prompt, ...images

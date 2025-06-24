@@ -6,6 +6,7 @@ document.getElementById("imageInput").addEventListener("change", function(){
 
     if (file) {
         imagePreview.src = URL.createObjectURL(file);
+        imagePreview.alt = "Uploaded image preview. Full description provided in the following section."
     } else {
         imagePreview.src = "https://placehold.co/500x300/orange/white"
     }
